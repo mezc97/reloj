@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mi primer reloj</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,500&display=swap" rel="stylesheet">
+</head>
+<style>
+   body {
+    background: #383e56;
+    /*background: linear-gradient(225deg, rgba(252,70,107,1) 0%, rgba(255,229,226,1) 100%);*/
+    background-repeat: no-repeat;
+    height: 100vh;
+    overflow-y: hidden;
+}
+.fecha {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 35px;
+    font-family: 'Raleway', sans-serif;
+    color: #fff;
+    }
+    .hora {
+    font-family: 'Ubuntu', sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    width: 200px;
+    margin: auto;
+    align-items: center;
+    font-size: 120px;
+}
+h1 {
+   // border: 3px solid #ffc2b4;
+    display: inline-flex;
+    padding: 20px 58px;
+    text-transform: uppercase;
+    color: #f05945!important;
+
+}
+svg {
+    opacity: 0.1;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+}
+
+@media screen and (max-width: 600px) { 
+    .hora {
+        font-size: 55px;
+    }
+    .fecha {
+    font-size: 25px;
+    }
+}
+</style>
+<body>
+    <div class="fecha">
+        <p id="dia"> </p>
+        <p> / </p>
+        <p id="mes"></p>
+        <p> / </p>
+        <p id="year"></p>
+    </div>
+    <div style="color: #ffc2b4;text-align: center; font-family: 'Raleway', sans-serif; display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;">
+        <h1>Mi primer reloj</h1>
+        <?xml version="1.0"?>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g>
+        <g xmlns="http://www.w3.org/2000/svg">
+            <g>
+                <path d="M347.216,301.211l-71.387-53.54V138.609c0-10.966-8.864-19.83-19.83-19.83c-10.966,0-19.83,8.864-19.83,19.83v118.978    c0,6.246,2.935,12.136,7.932,15.864l79.318,59.489c3.569,2.677,7.734,3.966,11.878,3.966c6.048,0,11.997-2.717,15.884-7.952    C357.766,320.208,355.981,307.775,347.216,301.211z" fill="#f05945" data-original="#000000" style="" class=""/>
+            </g>
+        </g>
+        <g xmlns="http://www.w3.org/2000/svg">
+            <g>
+                <path d="M256,0C114.833,0,0,114.833,0,256s114.833,256,256,256s256-114.833,256-256S397.167,0,256,0z M256,472.341    c-119.275,0-216.341-97.066-216.341-216.341S136.725,39.659,256,39.659c119.295,0,216.341,97.066,216.341,216.341    S375.275,472.341,256,472.341z" fill="#f05945" data-original="#000000" style="" class=""/>
+            </g>
+        </g>
+        <g xmlns="http://www.w3.org/2000/svg">
+        </g>
+        <g xmlns="http://www.w3.org/2000/svg">
+        </g>
+        <g xmlns="http://www.w3.org/2000/svg">
+        </g>
+        <g xmlns="http://www.w3.org/2000/svg">
+        </g>
+        <g xmlns="http://www.w3.org/2000/svg">
+        </g>
+        <g xmlns="http://www.w3.org/2000/svg">
+        </g>
+        <g xmlns="http://www.w3.org/2000/svg">
+        </g>
+        <g xmlns="http://www.w3.org/2000/svg">
+        </g>
+        <g xmlns="http://www.w3.org/2000/svg">
+        </g>
+        <g xmlns="http://www.w3.org/2000/svg">
+        </g>
+        <g xmlns="http://www.w3.org/2000/svg">
+        </g>
+        <g xmlns="http://www.w3.org/2000/svg">
+        </g>
+        <g xmlns="http://www.w3.org/2000/svg">
+        </g>
+        <g xmlns="http://www.w3.org/2000/svg">
+        </g>
+        <g xmlns="http://www.w3.org/2000/svg">
+        </g>
+        </g></svg>
+    </div>
+
+    <div class="hora">
+        <p id="hora"></p>
+        <p>:</p>
+        <p id="minutos"></p>
+        <p>:</p>
+        <p id="segundos"></p>
+        <p></p>
+    </div>
+
+
+
+    <script>
+        
+        function reloj() {
+              const fecha = new Date(),
+              hora = fecha.getHours(),
+              minuto = fecha.getMinutes(),
+              segundos = fecha.getSeconds(),
+              dia = fecha.getDate(),
+              mes = fecha.getMonth() + 1,
+              year = fecha.getFullYear();
+
+
+              document.getElementById('hora').innerHTML = hora;
+              document.getElementById('minutos').innerHTML = minuto;
+              document.getElementById('segundos').innerHTML = segundos;
+              document.getElementById('dia').innerHTML = dia;
+              document.getElementById('mes').innerHTML = mes;
+              document.getElementById('year').innerHTML = year;
+              setTimeout("reloj()",1000);
+
+        }
+      
+              document.addEventListener('DOMContentLoaded', () => {
+                reloj();
+                console.log("holii");
+              })
+
+
+    </script>    
+</body>
+
+</html>
